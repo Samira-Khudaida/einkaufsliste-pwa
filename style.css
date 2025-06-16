@@ -1,0 +1,159 @@
+/* Grundlegende Einstellungen für den gesamten Body */
+body {
+    font-family: 'Arial', sans-serif; /* Eine saubere Schriftart */
+    display: flex; /* Für zentriertes Layout */
+    justify-content: center; /* Horizontale Zentrierung */
+    align-items: center; /* Vertikale Zentrierung */
+    min-height: 100vh; /* Mindestens die volle Höhe des Viewports */
+    margin: 0; /* Standard-Margin entfernen */
+    background-color: #f4f7f6; /* Heller Hintergrund */
+    color: #333; /* Standard-Textfarbe */
+    box-sizing: border-box; /* Wichtig für Layouts, damit Padding/Border in die Breite/Höhe fällt */
+}
+
+/* Container für die gesamte App */
+.container {
+    background-color: #ffffff; /* Weißer Hintergrund für den Container */
+    padding: 30px;
+    border-radius: 12px; /* Abgerundete Ecken */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sanfter Schatten */
+    text-align: center; /* Text im Container zentrieren */
+    width: 100%; /* Volle Breite */
+    max-width: 500px; /* Maximale Breite auf Desktop */
+    margin: 20px; /* Außenabstand für kleinere Bildschirme */
+}
+
+h1 {
+    color: #2c3e50; /* Dunklere Überschrift */
+    margin-bottom: 25px;
+}
+
+/* Eingabebereich */
+.input-section {
+    display: flex; /* Input und Button nebeneinander */
+    margin-bottom: 20px;
+}
+
+#item-input {
+    flex-grow: 1; /* Nimmt den meisten Platz ein */
+    padding: 12px 15px;
+    border: 1px solid #dfe6e9;
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none; /* Fokus-Outline entfernen */
+    transition: border-color 0.3s ease;
+}
+
+#item-input:focus {
+    border-color: #007bff; /* Blauer Rahmen beim Fokus */
+}
+
+/* Buttons */
+button {
+    background-color: #007bff; /* Blauer Standard-Button */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin-left: 10px; /* Abstand zum Input-Feld */
+    border-radius: 8px;
+    cursor: pointer; /* Zeigt, dass es klickbar ist */
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.1s ease; /* Sanfte Übergänge */
+    white-space: nowrap; /* Button-Text nicht umbrechen */
+}
+
+button:hover {
+    background-color: #0056b3; /* Dunklerer Blau beim Hover */
+    transform: translateY(-1px); /* Leichter Hoch-Effekt beim Hover */
+}
+
+button:active {
+    transform: translateY(0); /* Zurück-Effekt beim Klicken */
+}
+
+/* Einkaufsliste */
+#shopping-list {
+    list-style: none; /* Standard-Listenpunkte entfernen */
+    padding: 0;
+    margin: 0 0 20px 0; /* Abstand nach unten */
+    text-align: left; /* Text linksbündig */
+}
+
+#shopping-list li {
+    background-color: #ecf0f1; /* Heller Hintergrund für Listenelemente */
+    padding: 12px 15px;
+    margin-bottom: 8px; /* Abstand zwischen Listenelementen */
+    border-radius: 8px;
+    display: flex; /* Für Text und Lösch-Button nebeneinander */
+    justify-content: space-between; /* Text links, Button rechts */
+    align-items: center; /* Vertikal zentrieren */
+    font-size: 1.1em;
+    word-break: break-word; /* Lange Wörter umbrechen */
+}
+
+/* Löschen-Button innerhalb der Listenelemente */
+#shopping-list li .delete-item-btn {
+    background-color: #dc3545; /* Roter Lösch-Button */
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    margin-left: 15px; /* Abstand zum Text */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8em; /* Kleinerer Font */
+    transition: background-color 0.3s ease;
+    flex-shrink: 0; /* Verhindert, dass der Button schrumpft */
+}
+
+#shopping-list li .delete-item-btn:hover {
+    background-color: #c82333; /* Dunkleres Rot */
+}
+
+/* Liste leeren Button */
+.clear-btn {
+    background-color: #6c757d; /* Grau */
+    width: calc(100% - 20px); /* Nimmt fast die volle Breite des Containers ein */
+    margin-left: 0; /* Override des standard button margin-left */
+}
+
+.clear-btn:hover {
+    background-color: #5a6268; /* Dunkleres Grau */
+}
+
+/* Responsives Design für kleinere Bildschirme */
+@media (max-width: 600px) {
+    .container {
+        margin: 10px; /* Weniger Margin auf sehr kleinen Bildschirmen */
+        padding: 20px;
+    }
+
+    .input-section {
+        flex-direction: column; /* Input und Button untereinander */
+    }
+
+    #item-input {
+        margin-bottom: 10px; /* Abstand zwischen Input und Button */
+        margin-left: 0;
+    }
+
+    button {
+        width: 100%; /* Buttons nehmen volle Breite ein */
+        margin-left: 0;
+    }
+
+    #add-item-btn {
+        margin-top: 5px; /* Abstand nach oben für den Button */
+    }
+
+    #shopping-list li {
+        flex-direction: column; /* Artikeltext und Button untereinander bei kleinen Bildschirmen */
+        align-items: flex-start; /* Text linksbündig */
+        padding: 10px;
+    }
+
+    #shopping-list li .delete-item-btn {
+        margin-top: 8px; /* Abstand zum Artikeltext */
+        margin-left: 0;
+        width: 100%; /* Lösch-Button volle Breite */
+    }
+}
